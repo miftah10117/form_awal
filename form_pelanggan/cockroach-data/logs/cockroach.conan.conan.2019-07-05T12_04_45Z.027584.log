@@ -1,0 +1,142 @@
+I190705 12:04:45.228757 1 util/log/clog.go:1199  [config] file created at: 2019/07/05 12:04:45
+I190705 12:04:45.228757 1 util/log/clog.go:1199  [config] running on machine: conan
+I190705 12:04:45.228757 1 util/log/clog.go:1199  [config] binary: CockroachDB CCL v19.1.0 (x86_64-unknown-linux-gnu, built 2019/04/29 18:36:40, go1.11.6)
+I190705 12:04:45.228757 1 util/log/clog.go:1199  [config] arguments: [cockroach start --insecure]
+I190705 12:04:45.228757 1 util/log/clog.go:1199  line format: [IWEF]yymmdd hh:mm:ss.uuuuuu goid file:line msg utf8=✓
+I190705 12:04:45.228755 1 cli/start.go:1033  logging to directory /home/conan/Documents/golang/cockroach-data/logs
+W190705 12:04:45.229118 1 cli/start.go:1068  RUNNING IN INSECURE MODE!
+
+- Your cluster is open for any client that can access <all your IP addresses>.
+- Any user, even root, can log in without providing a password.
+- Any user, connecting as root, can read or write any data in your cluster.
+- There is no network encryption nor authentication, and thus no confidentiality.
+
+Check out how to secure your cluster: https://www.cockroachlabs.com/docs/v19.1/secure-a-cluster.html
+I190705 12:04:45.229670 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 5.7 GiB, using system memory
+W190705 12:04:45.229729 1 cli/start.go:944  Using the default setting for --cache (128 MiB).
+  A significantly larger value is usually needed for good performance.
+  If you have a dedicated server a reasonable setting is --cache=.25 (1.4 GiB).
+I190705 12:04:45.229875 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 5.7 GiB, using system memory
+W190705 12:04:45.229899 1 cli/start.go:957  Using the default setting for --max-sql-memory (128 MiB).
+  A significantly larger value is usually needed in production.
+  If you have a dedicated server a reasonable setting is --max-sql-memory=.25 (1.4 GiB).
+I190705 12:04:45.230034 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 5.7 GiB, using system memory
+I190705 12:04:45.230056 1 cli/start.go:1082  CockroachDB CCL v19.1.0 (x86_64-unknown-linux-gnu, built 2019/04/29 18:36:40, go1.11.6)
+I190705 12:04:45.331748 1 server/status/recorder.go:610  available memory from cgroups (8.0 EiB) exceeds system memory 5.7 GiB, using system memory
+I190705 12:04:45.331837 1 server/config.go:386  system total memory: 5.7 GiB
+I190705 12:04:45.332015 1 server/config.go:388  server configuration:
+max offset             500000000
+cache size             128 MiB
+SQL memory pool size   128 MiB
+scan interval          10m0s
+scan min idle time     10ms
+scan max idle time     1s
+event log enabled      true
+I190705 12:04:45.332134 1 cli/start.go:929  process identity: uid 1000 euid 1000 gid 1000 egid 1000
+I190705 12:04:45.332250 1 cli/start.go:554  starting cockroach node
+I190705 12:04:45.334865 13 storage/engine/rocksdb.go:613  opening rocksdb instance at "/home/conan/Documents/golang/cockroach-data/cockroach-temp973308752"
+I190705 12:04:45.560058 13 server/server.go:876  [n?] monitoring forward clock jumps based on server.clock.forward_jump_check_enabled
+I190705 12:04:45.560936 13 storage/engine/rocksdb.go:613  opening rocksdb instance at "/home/conan/Documents/golang/cockroach-data"
+I190705 12:04:45.802752 13 server/config.go:494  [n?] 1 storage engine initialized
+I190705 12:04:45.802780 13 server/config.go:497  [n?] RocksDB cache size: 128 MiB
+I190705 12:04:45.802789 13 server/config.go:497  [n?] store 0: RocksDB, max size 0 B, max open file limit 10000
+W190705 12:04:45.803792 13 cli/start.go:896  neither --listen-addr nor --advertise-addr was specified.
+The server will advertise "conan" to other nodes, is this routable?
+
+Consider using:
+- for local-only servers:  --listen-addr=localhost
+- for multi-node clusters: --advertise-addr=<host/IP addr>
+I190705 12:04:45.879259 13 server/server.go:926  [n?] Sleeping till wall time 1562328285879112353 to catches up to 1562328286059963415 to ensure monotonicity. Delta: 180.851062ms
+I190705 12:04:46.061725 13 gossip/gossip.go:392  [n1] NodeDescriptor set to node_id:1 address:<network_field:"tcp" address_field:"conan:26257" > attrs:<> locality:<> ServerVersion:<major_val:19 minor_val:1 patch:0 unstable:0 > build_tag:"v19.1.0" started_at:1562328286061182580 
+W190705 12:04:46.081438 142 storage/replica_range_lease.go:506  can't determine lease status due to node liveness error: node not in the liveness table
+W190705 12:04:46.081506 142 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190705 12:04:46.082246 13 server/node.go:461  [n1] initialized store [n1,s1]: disk (capacity=57 GiB, available=25 GiB, used=111 KiB, logicalBytes=316 KiB), ranges=20, leases=0, queries=0.00, writes=0.00, bytesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=887.00 p90=25187.00 pMax=285450.00}, writesPerReplica={p10=0.00 p25=0.00 p50=0.00 p75=0.00 p90=0.00 pMax=0.00}
+I190705 12:04:46.082412 13 storage/stores.go:244  [n1] read 0 node addresses from persistent storage
+I190705 12:04:46.082667 13 server/node.go:699  [n1] connecting to gossip network to verify cluster ID...
+I190705 12:04:46.082709 13 server/node.go:719  [n1] node connected via gossip and verified as part of cluster "c745bcd2-6735-4a92-8ce1-de466def92c0"
+I190705 12:04:46.082921 13 server/node.go:542  [n1] node=1: started with [<no-attributes>=/home/conan/Documents/golang/cockroach-data] engine(s) and attributes []
+I190705 12:04:46.083269 13 server/status/recorder.go:610  [n1] available memory from cgroups (8.0 EiB) exceeds system memory 5.7 GiB, using system memory
+I190705 12:04:46.083381 13 server/server.go:1582  [n1] starting http server at [::]:8080 (use: conan:8080)
+I190705 12:04:46.083399 13 server/server.go:1584  [n1] starting grpc/postgres server at [::]:26257
+I190705 12:04:46.083429 13 server/server.go:1585  [n1] advertising CockroachDB node at conan:26257
+W190705 12:04:46.083477 13 jobs/registry.go:341  [n1] unable to get node liveness: node not in the liveness table
+W190705 12:04:46.128996 142 storage/store.go:1525  [n1,s1,r6/1:/Table/{SystemCon…-11}] could not gossip system config: [NotLeaseHolderError] r6: replica (n1,s1):1 not lease holder; lease holder unknown
+I190705 12:04:46.226748 13 server/server.go:1650  [n1] done ensuring all necessary migrations have run
+I190705 12:04:46.226823 13 server/server.go:1653  [n1] serving sql connections
+I190705 12:04:46.227250 13 cli/start.go:689  [config] clusterID: c745bcd2-6735-4a92-8ce1-de466def92c0
+I190705 12:04:46.227356 13 cli/start.go:697  node startup completed:
+CockroachDB node starting at 2019-07-05 12:04:46.227032764 +0000 UTC (took 1.0s)
+build:               CCL v19.1.0 @ 2019/04/29 18:36:40 (go1.11.6)
+webui:               http://conan:8080
+sql:                 postgresql://root@conan:26257?sslmode=disable
+client flags:        cockroach <client cmd> --host=conan:26257 --insecure
+logs:                /home/conan/Documents/golang/cockroach-data/logs
+temp dir:            /home/conan/Documents/golang/cockroach-data/cockroach-temp973308752
+external I/O path:   /home/conan/Documents/golang/cockroach-data/extern
+store[0]:            path=/home/conan/Documents/golang/cockroach-data
+status:              restarted pre-existing node
+clusterID:           c745bcd2-6735-4a92-8ce1-de466def92c0
+nodeID:              1
+I190705 12:04:46.325682 162 storage/node_liveness.go:453  [n1,hb] heartbeat failed on epoch increment; retrying
+I190705 12:04:46.335224 179 server/server_update.go:64  [n1] failed attempt to upgrade cluster version, error: node 1 not running (UNAVAILABLE), cannot determine version
+I190705 12:04:46.582243 182 sql/event_log.go:135  [n1] Event: "node_restart", target: 1, info: {Descriptor:{NodeID:1 Address:conan:26257 Attrs: Locality: ServerVersion:19.1 BuildTag:v19.1.0 StartedAt:1562328286061182580 LocalityAddress:[] XXX_NoUnkeyedLiteral:{} XXX_sizecache:0} ClusterID:c745bcd2-6735-4a92-8ce1-de466def92c0 StartedAt:1562328286061182580 LastUp:1562328282071650599}
+I190705 12:04:47.297692 179 server/server_update.go:67  [n1] no need to upgrade, cluster already at the newest version
+I190705 12:04:48.189803 57 gossip/gossip.go:1510  [n1] node has connected to cluster via gossip
+I190705 12:04:48.190090 57 storage/stores.go:263  [n1] wrote 0 node addresses to persistent storage
+I190705 12:04:56.085425 150 storage/store.go:4220  [n1,s1] sstables (read amplification = 1):
+0 [ 77K 1 ]: 77K
+I190705 12:04:56.085747 150 storage/store.go:4221  [n1,s1] 
+** Compaction Stats [default] **
+Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Moved(GB) W-Amp Rd(MB/s) Wr(MB/s) Comp(sec) Comp(cnt) Avg(sec) KeyIn KeyDrop
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+  L0      1/0   77.43 KB   0.5      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      1.0         0         1    0.078       0      0
+ Sum      1/0   77.43 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      1.0         0         1    0.078       0      0
+ Int      0/0    0.00 KB   0.0      0.0     0.0      0.0       0.0      0.0       0.0   1.0      0.0      1.0         0         1    0.078       0      0
+Uptime(secs): 10.5 total, 10.5 interval
+Flush(GB): cumulative 0.000, interval 0.000
+AddFile(GB): cumulative 0.000, interval 0.000
+AddFile(Total Files): cumulative 0, interval 0
+AddFile(L0 Files): cumulative 0, interval 0
+AddFile(Keys): cumulative 0, interval 0
+Cumulative compaction: 0.00 GB write, 0.01 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.1 seconds
+Interval compaction: 0.00 GB write, 0.01 MB/s write, 0.00 GB read, 0.00 MB/s read, 0.1 seconds
+Stalls(count): 0 level0_slowdown, 0 level0_slowdown_with_compaction, 0 level0_numfiles, 0 level0_numfiles_with_compaction, 0 stop for pending_compaction_bytes, 0 slowdown for pending_compaction_bytes, 0 memtable_compaction, 0 memtable_slowdown, interval 0 total count
+estimated_pending_compaction_bytes: 0 B
+I190705 12:04:56.087734 155 server/status/runtime.go:500  [n1] runtime stats: 88 MiB RSS, 131 goroutines, 76 MiB/47 MiB/135 MiB GO alloc/idle/total, 15 MiB/19 MiB CGO alloc/total, 0.0 CGO/sec, 0.0/0.0 %(u/s)time, 0.0 %gc (9x), 1.2 MiB/44 KiB (r/w)net
+I190705 12:05:06.091867 155 server/status/runtime.go:500  [n1] runtime stats: 90 MiB RSS, 131 goroutines, 82 MiB/41 MiB/135 MiB GO alloc/idle/total, 16 MiB/19 MiB CGO alloc/total, 60.4 CGO/sec, 1.7/0.5 %(u/s)time, 0.0 %gc (0x), 232 KiB/13 KiB (r/w)net
+I190705 12:05:16.095771 155 server/status/runtime.go:500  [n1] runtime stats: 98 MiB RSS, 132 goroutines, 89 MiB/35 MiB/135 MiB GO alloc/idle/total, 16 MiB/20 MiB CGO alloc/total, 37.1 CGO/sec, 1.3/0.6 %(u/s)time, 0.0 %gc (0x), 1.2 MiB/46 KiB (r/w)net
+I190705 12:05:26.099658 155 server/status/runtime.go:500  [n1] runtime stats: 105 MiB RSS, 132 goroutines, 95 MiB/28 MiB/135 MiB GO alloc/idle/total, 16 MiB/20 MiB CGO alloc/total, 25.0 CGO/sec, 1.2/0.5 %(u/s)time, 0.0 %gc (0x), 2.6 KiB/4.9 KiB (r/w)net
+I190705 12:05:36.104226 155 server/status/runtime.go:500  [n1] runtime stats: 111 MiB RSS, 132 goroutines, 101 MiB/22 MiB/135 MiB GO alloc/idle/total, 16 MiB/20 MiB CGO alloc/total, 31.2 CGO/sec, 1.3/0.5 %(u/s)time, 0.0 %gc (0x), 698 B/881 B (r/w)net
+I190705 12:05:46.083442 151 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+gossip connectivity
+  n1 [sentinel];
+I190705 12:05:46.108049 155 server/status/runtime.go:500  [n1] runtime stats: 118 MiB RSS, 131 goroutines, 108 MiB/16 MiB/135 MiB GO alloc/idle/total, 16 MiB/20 MiB CGO alloc/total, 25.7 CGO/sec, 1.4/0.3 %(u/s)time, 0.0 %gc (0x), 1.5 KiB/1.9 KiB (r/w)net
+I190705 12:05:56.112254 155 server/status/runtime.go:500  [n1] runtime stats: 125 MiB RSS, 131 goroutines, 114 MiB/9.9 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 26.6 CGO/sec, 1.3/0.3 %(u/s)time, 0.0 %gc (0x), 9.2 KiB/11 KiB (r/w)net
+I190705 12:06:06.117061 155 server/status/runtime.go:500  [n1] runtime stats: 130 MiB RSS, 131 goroutines, 79 MiB/44 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 26.6 CGO/sec, 1.5/0.3 %(u/s)time, 0.0 %gc (1x), 5.3 KiB/5.8 KiB (r/w)net
+I190705 12:06:16.119639 155 server/status/runtime.go:500  [n1] runtime stats: 130 MiB RSS, 133 goroutines, 85 MiB/38 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 24.8 CGO/sec, 1.1/0.5 %(u/s)time, 0.0 %gc (0x), 1.4 KiB/1.4 KiB (r/w)net
+I190705 12:06:26.123864 155 server/status/runtime.go:500  [n1] runtime stats: 131 MiB RSS, 132 goroutines, 91 MiB/32 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 33.5 CGO/sec, 1.2/0.4 %(u/s)time, 0.0 %gc (0x), 2.3 KiB/3.5 KiB (r/w)net
+I190705 12:06:36.128312 155 server/status/runtime.go:500  [n1] runtime stats: 131 MiB RSS, 132 goroutines, 97 MiB/26 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 26.6 CGO/sec, 1.2/0.4 %(u/s)time, 0.0 %gc (0x), 4.2 KiB/4.3 KiB (r/w)net
+I190705 12:06:46.083350 151 gossip/gossip.go:557  [n1] gossip status (ok, 1 node)
+gossip client (0/3 cur/max conns)
+gossip server (0/3 cur/max conns, infos 0/0 sent/received, bytes 0B/0B sent/received)
+I190705 12:06:46.131885 155 server/status/runtime.go:500  [n1] runtime stats: 131 MiB RSS, 131 goroutines, 104 MiB/20 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 31.4 CGO/sec, 1.4/0.3 %(u/s)time, 0.0 %gc (0x), 3.4 KiB/3.6 KiB (r/w)net
+I190705 12:06:56.136639 155 server/status/runtime.go:500  [n1] runtime stats: 131 MiB RSS, 131 goroutines, 110 MiB/14 MiB/135 MiB GO alloc/idle/total, 16 MiB/21 MiB CGO alloc/total, 22.3 CGO/sec, 1.1/0.5 %(u/s)time, 0.0 %gc (0x), 11 KiB/6.1 KiB (r/w)net
+I190705 12:07:06.140584 155 server/status/runtime.go:500  [n1] runtime stats: 136 MiB RSS, 131 goroutines, 116 MiB/8.0 MiB/135 MiB GO alloc/idle/total, 16 MiB/22 MiB CGO alloc/total, 34.4 CGO/sec, 1.5/0.4 %(u/s)time, 0.0 %gc (0x), 1.1 KiB/1.1 KiB (r/w)net
+I190705 12:07:14.681353 1 cli/start.go:765  received signal 'interrupt'
+I190705 12:07:14.715099 1 cli/start.go:830  initiating graceful shutdown of server
+I190705 12:07:14.783490 361 util/stop/stopper.go:546  [server drain process] quiescing; tasks left:
+1      [async] intent_resolver_ir_batcher
+1      [async] intent_resolver_gc_batcher
+1      [async] closedts-rangefeed-subscriber
+W190705 12:07:14.784210 43 vendor/google.golang.org/grpc/clientconn.go:1304  grpc: addrConn.createTransport failed to connect to {conan:26257 0  <nil>}. Err :connection error: desc = "transport: failed to write client preface: io: read/write on closed pipe". Reconnecting...
+W190705 12:07:14.848667 43 vendor/google.golang.org/grpc/clientconn.go:1440  grpc: addrConn.transportMonitor exits due to: grpc: the connection is closing
+I190705 12:07:14.815358 361 util/stop/stopper.go:546  [server drain process] quiescing; tasks left:
+1      [async] intent_resolver_gc_batcher
+1      [async] closedts-rangefeed-subscriber
+I190705 12:07:14.916567 361 storage/engine/rocksdb.go:746  closing rocksdb instance at "/home/conan/Documents/golang/cockroach-data/cockroach-temp973308752"
+I190705 12:07:14.951190 361 storage/engine/rocksdb.go:746  closing rocksdb instance at "/home/conan/Documents/golang/cockroach-data"
+I190705 12:07:14.984418 1 cli/start.go:876  server drained and shutdown completed
+I190705 12:07:15.027747 1 cli/error.go:229  interrupted
+Error: interrupted

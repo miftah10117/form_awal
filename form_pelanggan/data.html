@@ -1,0 +1,35 @@
+{{define "form"}}
+{{define "result"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daftar Data Pelanggan Laundry</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+    <body>
+      <table class="table table-bordered table-striped table-hover">
+      <h1> Data Pelanggan</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Jumlah Laundry</th>	
+            <th>Estimasi Selesai</th>	
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{.nama}}</td>
+            <td>{{.alamat}}</td>
+            <td>{{.jumlah}}</td>
+            <td>{{.estimasi}}</td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+</html>
+{{end}}
+{{end}}

@@ -1,0 +1,92 @@
+{{define "form"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Hello Bulma!</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+    <body>
+      <div class="columns is-desktop">
+        <div class="column">
+
+        </div>
+        <div class="column">
+          <h2>Tambahkan Data Pelanggan</h2>
+          <br/>
+          <form method="post" action="/process">
+            <div class="field">
+              <label class="label">Nama</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="" name="nama" id="nama">
+                </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Alamat</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="" name="alamat" id="alamat">
+                </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Jumlah Laundry</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="" name="jumlah" id="jumlah">
+                </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Estimasi Selesai</label>
+                <div class="control">
+                  <input class="input" type="text" placeholder="" name="estimasi" id="estimasi">
+                </div>
+            </div>
+
+            <div class="control">
+              <button class="button is-link">Submit</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="column"></div>
+      </div>
+    </body>
+</html>
+{{end}}
+
+{{define "result"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daftar Data Pelanggan</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </head>
+    <body>
+      <table class="table table-bordered table-striped table-hover">
+      <h1> Data Pelanggan</h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Jumkah Laundry</th>	
+            <th>Estimasi Selesai</th>	
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{.nama}}</td>
+            <td>{{.alamat}}</td>
+            <td>{{.jumlah}}</td>
+            <td>{{.estimasi}}</td>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+</html>
+{{end}}
