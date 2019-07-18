@@ -1,2 +1,2 @@
-# web_mhs
-Web Mahasiswa dengan menggunakan backend Golang dan frontend Bulma
+# Form Pelanggan
+Yang dimana backend menggunakan Golang dan frondend menggunakan Bulma
